@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Captain Up 
+Plugin Name: Captain Up
 Plugin URI: https://www.captainup.com
 Description: Add Game Mechanics to your site and increase your engagement and retention. 2 minutes install: Simply add your free Captain Up API Key and you are good to go. The plugin also adds widgets you can use to show leaderboards and activities within your site.
-Version: 3.0.3
+Version: 3.0.4
 Author: Captain Up Team
 License: GPL2
 */
@@ -52,7 +52,7 @@ function cptup_config() {
 }
 
 // Add Captain Up to the main menu of the WordPress admin panel
-add_action('admin_menu', 'cptup_config'); 
+add_action('admin_menu', 'cptup_config');
 
 
 // Add the Captain Up Script to the Site
@@ -155,14 +155,14 @@ class Captainup_Widget extends WP_Widget {
 		$type = $instance['type'];
 		$height = $instance['height'];
 		$default_leaderboard = $instance['default_leaderboard'];
-		
+
 		echo $before_widget;
 		?>
 
 		<div class='captain-<?php echo $type; ?>-widget' <?php if($type=='leaderboard') echo 'data-cpt-leaderboard='.$default_leaderboard ?> style='width: auto; height: <?php echo $height; ?>px; display: none;'>
 		</div>
-		
-		<?php 
+
+		<?php
 		echo $after_widget;
 	}
 
@@ -186,7 +186,7 @@ class Captainup_Widget extends WP_Widget {
 		if (!isset($css)) $css = 'height: 300px; margin-top: 20px;';
 		if (!isset($height)) $height = '350';
 		if (!isset($default_leaderboard)) $default_leaderboard = 'monthly_ranking';
-		
+
 		?>
 
 		<p>
@@ -208,7 +208,7 @@ class Captainup_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('height'); ?>">
 				<?php _e('Height:'); ?>
-			</label> 
+			</label>
 			<input size="4" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" type="text" value="<?php echo $height; ?>" />px
 		</p>
 
@@ -218,7 +218,7 @@ class Captainup_Widget extends WP_Widget {
 			</label>
 
 			<select id="<?php echo $this->get_field_id('default_leaderboard'); ?>" name="<?php echo $this->get_field_name('default_leaderboard'); ?>">
-				
+
 				<option value="all-time-ranking" <?php if($default_leaderboard == 'all-time-ranking') echo 'selected'?>>
 					All Time
 				</option>
@@ -250,13 +250,16 @@ class Captainup_Widget extends WP_Widget {
 				});
 			});
 		</script>
-		
+
 		<?php
 	}
 }
 
 // Initialize the Widget
-add_action('widgets_init', create_function('', 'register_widget("CaptainUp_Widget");') );
+function cptup_init_widget(){
+	return register_widget('CaptainUp_Widget');
+}
+add_action('widgets_init', 'cptup_init_widget' );
 
 
 // Shortcodes
@@ -305,10 +308,10 @@ add_shortcode('captain-activity', 'cptup_activity_shortcode');
 
 // Sign Up Link Shortcode
 // [captain-sign-up text="Hello"]
-// 
+//
 // Options:
 // - text - the text of the link, by default "Sign Up Now"
-// 
+//
 function cptup_sign_up_link_shortcode($atts) {
 	extract(shortcode_atts(
 		array(
@@ -322,7 +325,7 @@ add_shortcode('captain-sign-up', 'cptup_sign_up_link_shortcode');
 
 // WordPress Comments Integration
 // -----------------------------------------------------------------------------
-// 
+//
 // The flow for detecting a new WordPress comment and sending
 // to Captain Up goes like this: First, we add an action hook to
 // `comment_post` that notifies us when comments are saved to the

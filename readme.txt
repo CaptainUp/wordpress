@@ -17,7 +17,7 @@ Note: You will need to connect your WordPress site to a Captain Up account. If y
 
 **NEW**: Rewards: Give your loyal users badges, trophies, coupons, and rewards.
 
-**NEW**: Messaging: Communicate with your users, send them welcome messages, updates, and promotions. 
+**NEW**: Messaging: Communicate with your users, send them welcome messages, updates, and promotions.
 
 **Features**:
 
@@ -117,6 +117,10 @@ Yes. When visiting from mobile, our launcher widget will be automatically replac
 
 == Changelog ==
 
+= 3.0.4 =
+
+* Support for PHP 7.3
+
 = 3.0.3 =
 
 * Support for WordPress 5.0.1.
@@ -129,7 +133,7 @@ Yes. When visiting from mobile, our launcher widget will be automatically replac
 
 * Documentation updates.
 * Security improvements.
- 
+
 = 3.0.0 =
 
 * Added client token to settings.
