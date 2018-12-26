@@ -90,6 +90,10 @@ The source code for this plugin is available on [Captain Up's GitHub account](ht
 
 ## Changelog
 
+###### 3.0.4
+
+* Support for PHP 7.3
+
 ###### 3.0.3
 
 * Support for WordPress 5.0.1
@@ -102,7 +106,7 @@ The source code for this plugin is available on [Captain Up's GitHub account](ht
 
 * Documentation updates
 * Security improvements
- 
+
 ###### 3.0.0
 
 * Added client token to settings
