@@ -90,6 +90,10 @@ The source code for this plugin is available on [Captain Up's GitHub account](ht
 
 ## Changelog
 
+###### 3.0.6
+
+* Support for WordPress 5.4
+
 ###### 3.0.5
 
 * Support for WordPress 5.1

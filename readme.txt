@@ -2,7 +2,7 @@
 Contributors: cptup
 Tags: game-mechanics,captainup,gamification,engagement,comments,widget,plugin,twitter,facebook,google,social,messaging
 Requires at least: 3.0.1
-Tested up to: 5.1
+Tested up to: 5.4
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -116,6 +116,10 @@ Yes. When visiting from mobile, our launcher widget will be automatically replac
 
 
 == Changelog ==
+
+= 3.0.6 =
+
+* Support for WordPress 5.4.
 
 = 3.0.5 =
 
